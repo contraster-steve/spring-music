@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+  petclinic:
+    environment:
+      - CONTRAST__SERVER__NAME=SpringMusic-dev
+      - CONTRAST__SERVER__ENVIRONMENT=Development 
+      - CONTRAST__ASSESS__ENABLE=true
+      - CONTRAST__PROTECT__ENABLE=false
