@@ -1,0 +1,19 @@
+version: "3.4"
+
+services:
+  petclinic:
+    image: smithst987/springmusic:latest
+    container_name: springmusic
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./contrast_security.yaml:/app/springmusic/contrast_security.yaml
+    environment:
+      - CONTRAST_CONFIG_PATH=/app/springmusic/contrast_security.yaml
+      - CONTRAST__ENABLE=TRUE
+      - CONTRAST__AGENT__JAVA__STANDALONE__APP__NAME=SpringMusic
+      - CONTRAST__APPLICATION__GROUP=application_control_2
+      - CONTRAST__APPLICATION__METADATA=bU=PS, contact=steve.smith@contrastsecurity.com
+    ports:
+      - "8686:8080"
