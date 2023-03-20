@@ -12,14 +12,14 @@ pipeline {
   tools {
     jdk "JDK17"
   }
-
-  when {
-    changeRequest() // 
-    environment name: 'CHANGE_TARGET', value: 'master'
-  }  
   
   stages {
-      
+
+      when {
+         changeRequest() // 
+         environment name: 'CHANGE_TARGET', value: 'master'
+    }  
+    
     stage('Download Source') {
         steps{
             script{
