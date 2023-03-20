@@ -55,8 +55,8 @@ pipeline {
         withCredentials([string(credentialsId: 'bitbucket-token', variable: 'BITBUCKET_PASSWORD')]) {
           withCredentials([string(credentialsId: 'blackduck-token', variable: 'blackduck-token')]) {
             // NOTE: Change path to blackduck-scan.py
-            echo "EXEC: /home/ubuntu/tools/bitbucket/blackduck-bitbucket-integration/blackduck-scan.py --bb-url ${BITBUCKET_URL} --blackduck-url ${URL}"
-            sh "/home/ubuntu/tools/bitbucket/blackduck-bitbucket-integration/blackduck-scan.py --bb-url ${BITBUCKET_URL} --blackduck-url ${URL}"
+            echo "EXEC: /home/ubuntu/tools/bitbucket/blackduck-bitbucket-integration/blackduck-scan.py --bb-url ${BITBUCKET_URL} --blackduck-url ${BLACKDUCK_URL}"
+            sh "/home/ubuntu/tools/bitbucket/blackduck-bitbucket-integration/blackduck-scan.py --bb-url ${BITBUCKET_URL} --blackduck-url ${BLACKDUCK_URL}"
           }
         }
       }
