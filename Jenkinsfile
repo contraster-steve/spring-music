@@ -13,6 +13,11 @@ pipeline {
     jdk "JDK17"
   }
 
+when {
+  changeRequest() // is an open gerrit code review
+  environment name: 'CHANGE_TARGET', value: 'master'
+}  
+  
   stages {
       
     stage('Download Source') {
