@@ -7,6 +7,7 @@ pipeline {
     // This username will be combined with the access token configured in Jenkins
     BITBUCKET_USERNAME = 'saleen.447@gmail.com'
     BLACKDUCK_URL = 'https://poc09.blackduck.synopsys.com'
+    CHANGE_TARGET = 'master'
   }
 
   tools {
@@ -14,11 +15,6 @@ pipeline {
   }
   
   stages {
-
-      when {
-         changeRequest() // 
-         environment name: 'CHANGE_TARGET', value: 'master'
-    }  
     
     stage('Download Source') {
         steps{
